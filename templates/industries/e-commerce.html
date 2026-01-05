@@ -1,44 +1,132 @@
 {% extends "base/base.html" %}
 
-{% block title %}High-Volume E-Commerce Processing | ApexCore Payments{% endblock %}
+{% block title %}High-Volume E-Commerce Processing | ApexCore Pay{% endblock %}
 
 {% block content %}
-<section class="relative h-screen flex items-center overflow-hidden">
-    <div class="absolute inset-0 z-0">
-        <div class="absolute inset-0 bg-slate-900/80 z-10"></div>
-        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f7a07d?auto=format&fit=crop&q=80&w=2000" class="w-full h-full object-cover opacity-50" alt="E-commerce Background">
+<section class="relative min-h-screen flex items-center overflow-hidden bg-slate-950 pt-24 pb-12">
+    <div class="absolute inset-0 z-0 pointer-events-none">
+        <div class="absolute top-[-10%] right-[-5%] w-[800px] h-[800px] bg-blue-600/10 rounded-full blur-[120px] animate-pulse"></div>
+        <div class="absolute bottom-[-10%] left-[-10%] w-[600px] h-[600px] bg-indigo-600/10 rounded-full blur-[100px]"></div>
+        <div class="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImEiIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgNDBMOF0gMEg0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjYSkiLz48L3N2Zz4=')] opacity-30"></div>
     </div>
 
-    <div class="max-w-7xl mx-auto px-6 relative z-20 w-full">
-        <div class="max-w-3xl">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+        
+        <div class="max-w-3xl pt-10 lg:pt-0">
             <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-400/30 bg-blue-500/10 backdrop-blur-md mb-6 animate-fade-in">
-                <span class="text-blue-400 text-xs font-bold uppercase tracking-widest">Dropshipping & Retail</span>
+                <span class="relative flex h-2 w-2">
+                  <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
+                  <span class="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
+                </span>
+                <span class="text-blue-400 text-xs font-bold uppercase tracking-widest">Live Processing</span>
             </div>
-            <h1 class="text-6xl md:text-8xl font-display font-bold text-white mb-6 leading-tight animate-fade-in">
+            
+            <h1 class="text-5xl md:text-8xl font-display font-bold text-white mb-6 leading-tight animate-fade-in">
                 Scale Without <br>
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-indigo-400">Limits.</span>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-indigo-400 to-purple-400">Limits.</span>
             </h1>
-            <p class="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl animate-fade-in">
+            
+            <p class="text-lg md:text-xl text-slate-300 mb-10 leading-relaxed max-w-xl animate-fade-in">
                 Standard processors cap you at $25k/month. We build infrastructure for 7 and 8-figure brands. Process unlimited volume with fewer holds.
             </p>
+            
             <div class="flex flex-wrap gap-4 animate-fade-in">
-                <a href="#contact" class="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-200 transition-all">Start Processing</a>
+                <a href="/contact" class="px-8 py-4 bg-white text-slate-900 rounded-full font-bold hover:bg-slate-200 transition-all shadow-[0_0_20px_rgba(255,255,255,0.2)]">Start Processing</a>
                 <a href="#integrations" class="px-8 py-4 border border-white/30 text-white rounded-full font-medium hover:bg-white/10 transition-all backdrop-blur-sm">View Integrations</a>
             </div>
         </div>
+
+        <div class="relative perspective-1000 mt-12 lg:mt-0">
+            <div class="relative z-10 bg-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6 shadow-2xl transform lg:rotate-y-[-10deg] lg:rotate-x-[5deg] hover:rotate-y-[0deg] hover:rotate-x-[0deg] transition-all duration-700 ease-out">
+                
+                <div class="flex justify-between items-center mb-8 border-b border-slate-700/50 pb-4">
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-400">
+                            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                        </div>
+                        <div>
+                            <div class="text-sm text-slate-400">Total Revenue</div>
+                            <div class="text-2xl font-bold text-white">$2,845,920.00</div>
+                        </div>
+                    </div>
+                    <div class="px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 text-green-400 text-xs font-bold">+124% YoY</div>
+                </div>
+
+                <div class="h-48 flex items-end justify-between gap-2 mb-6 px-2">
+                    <div class="w-full bg-blue-500/20 rounded-t-sm h-[40%] animate-pulse" style="animation-delay: 0s"></div>
+                    <div class="w-full bg-blue-500/30 rounded-t-sm h-[65%] animate-pulse" style="animation-delay: 0.1s"></div>
+                    <div class="w-full bg-blue-500/40 rounded-t-sm h-[50%] animate-pulse" style="animation-delay: 0.2s"></div>
+                    <div class="w-full bg-blue-500/50 rounded-t-sm h-[85%] animate-pulse" style="animation-delay: 0.3s"></div>
+                    <div class="w-full bg-blue-500/60 rounded-t-sm h-[70%] animate-pulse" style="animation-delay: 0.4s"></div>
+                    <div class="w-full bg-blue-500/70 rounded-t-sm h-[95%] animate-pulse" style="animation-delay: 0.5s"></div>
+                    <div class="w-full bg-blue-400 rounded-t-sm h-[100%] shadow-[0_0_20px_rgba(96,165,250,0.5)]"></div>
+                </div>
+
+                <div class="absolute -right-4 md:-right-12 top-20 bg-slate-800/90 backdrop-blur-md border border-slate-600 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                    <div class="w-10 h-10 bg-green-500 rounded-full flex items-center justify-center text-white font-bold text-xs">$$$</div>
+                    <div>
+                        <div class="text-white font-bold text-sm">New Order</div>
+                        <div class="text-green-400 text-xs">+$1,249.00 USD</div>
+                    </div>
+                </div>
+
+                <div class="absolute -left-4 md:-left-8 bottom-10 bg-slate-800/90 backdrop-blur-md border border-slate-600 p-4 rounded-xl shadow-xl flex items-center gap-3 animate-bounce" style="animation-duration: 4s; animation-delay: 1s;">
+                    <div class="w-10 h-10 bg-indigo-500 rounded-full flex items-center justify-center text-white">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="text-white font-bold text-sm">Global Payout</div>
+                        <div class="text-slate-400 text-xs">Sent to Batch</div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="absolute inset-0 bg-blue-500/20 blur-[80px] -z-10"></div>
+        </div>
+
     </div>
 </section>
 
-<section class="py-24 bg-surface">
+<section class="py-24 bg-surface overflow-hidden">
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div class="relative">
-            <div class="absolute -inset-4 bg-primary/20 rounded-2xl blur-xl"></div>
-            <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?auto=format&fit=crop&q=80&w=1000" class="relative rounded-2xl shadow-2xl border border-slate-700 w-full" alt="Declined Transaction">
-            <div class="absolute -bottom-6 -right-6 bg-slate-800 p-6 rounded-xl border border-slate-600 shadow-xl">
+        <div class="relative group mb-12 lg:mb-0">
+            <div class="absolute -inset-4 bg-red-500/20 rounded-2xl blur-xl transition-all duration-500 group-hover:bg-red-500/30"></div>
+            
+            <div class="relative bg-slate-900 border border-slate-700 rounded-2xl p-8 shadow-2xl transform rotate-3 transition-transform duration-500 group-hover:rotate-1">
+                <div class="flex items-center justify-between mb-8">
+                    <div class="flex items-center gap-3">
+                        <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                        <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                    </div>
+                    <div class="text-slate-500 text-xs font-mono">dashboard.stripe.com</div>
+                </div>
+
+                <div class="text-center py-8">
+                    <div class="w-16 h-16 bg-red-500/10 text-red-500 rounded-full flex items-center justify-center mx-auto mb-4 border border-red-500/20">
+                        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white mb-2">Account Disabled</h3>
+                    <p class="text-slate-400 mb-6">We've noticed high-risk activity on your account.</p>
+                    <div class="bg-slate-800 rounded-lg p-4 text-left border border-slate-700">
+                        <div class="flex justify-between text-sm mb-2">
+                            <span class="text-slate-500">Held Balance</span>
+                            <span class="text-white font-mono">$42,390.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-slate-500">Release Date</span>
+                            <span class="text-white font-mono">120 Days</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="absolute -bottom-6 -right-2 md:-right-6 bg-slate-800 p-6 rounded-xl border border-slate-600 shadow-xl z-10">
                 <div class="text-red-400 font-bold text-2xl">63%</div>
-                <div class="text-slate-400 text-sm">of dropshippers get banned<br>by Stripe in year 1.</div>
+                <div class="text-slate-400 text-sm">of dropshippers get banned<br>by traditional banks.</div>
             </div>
         </div>
+
         <div>
             <h2 class="text-4xl font-display font-bold text-white mb-6">Why You Get Banned</h2>
             <p class="text-slate-400 text-lg mb-6">

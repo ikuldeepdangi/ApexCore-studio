@@ -1,6 +1,6 @@
 {% extends "base/base.html" %}
 
-{% block title %}Partner Program | ApexCore Payments{% endblock %}
+{% block title %}Partner Program | ApexCore Pay{% endblock %}
 
 {% block content %}
 <section class="relative min-h-[85vh] flex items-center pt-20 overflow-hidden">
@@ -79,22 +79,9 @@
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
                 </div>
                 <h3 class="text-2xl font-bold text-white mb-4">99% Approval Rate</h3>
-                <p class="text-slate-400 mb-8">Don't burn leads. We have 15+ banking partners. If Bank A says no, Bank B says yes. We monetize deals others trash.</p>
+                <p class="text-slate-400 mb-8 leading-relaxed">Don't burn leads. We have 15+ banking partners. If Bank A says no, Bank B says yes. We monetize deals others trash.</p>
                 
-                <div class="mt-auto space-y-3">
-                    <div class="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg border border-slate-700">
-                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                        <div class="text-xs text-white">High-Risk CBD <span class="text-slate-500 ml-2">Approved 2m ago</span></div>
-                    </div>
-                    <div class="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg border border-slate-700">
-                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                        <div class="text-xs text-white">Adult VOD <span class="text-slate-500 ml-2">Approved 15m ago</span></div>
-                    </div>
-                     <div class="flex items-center gap-3 p-3 bg-slate-800/50 rounded-lg border border-slate-700">
-                        <div class="w-2 h-2 rounded-full bg-green-500"></div>
-                        <div class="text-xs text-white">Forex Broker <span class="text-slate-500 ml-2">Approved 1h ago</span></div>
-                    </div>
-                </div>
+                <div class="absolute bottom-0 right-0 w-full h-32 bg-gradient-to-t from-primary/5 to-transparent"></div>
             </div>
 
             <div class="bg-slate-900 rounded-3xl p-8 border border-slate-700 group hover:border-primary/50 transition-colors">
@@ -116,48 +103,61 @@
     </div>
 </section>
 
-<section id="calculator" class="py-24 relative overflow-hidden">
+<section id="calculator" class="py-24 relative overflow-hidden bg-slate-950">
     <div class="absolute inset-0 bg-primary/5"></div>
     <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center relative z-10">
+        
         <div>
             <h2 class="text-4xl font-display font-bold text-white mb-6">Calculate Your Potential</h2>
             <p class="text-slate-400 text-lg mb-8">
-                High-risk merchants process higher volumes and pay higher rates. That means significantly higher residuals for you compared to standard retail accounts.
+                High-risk merchants process higher volumes and pay higher rates. Move the sliders to see your potential monthly residuals based on a 60% revenue share.
             </p>
             
-            <div class="space-y-8">
+            <div class="space-y-10">
                 <div>
-                    <div class="flex justify-between text-sm text-white mb-2 font-bold">
+                    <div class="flex justify-between text-sm text-white mb-4 font-bold">
                         <span>Total Monthly Volume</span>
-                        <span>$500,000</span>
+                        <span id="volumeDisplay">$500,000</span>
                     </div>
-                    <div class="h-2 bg-slate-700 rounded-full">
-                        <div class="w-[40%] h-full bg-primary rounded-full relative">
-                            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-lg cursor-pointer"></div>
+                    <div class="relative w-full h-2">
+                        <input type="range" min="100000" max="2000000" step="50000" value="500000" id="volumeInput" 
+                               class="w-full absolute z-20 opacity-0 cursor-pointer h-full">
+                        <div class="absolute top-0 left-0 h-2 bg-slate-700 rounded-full w-full overflow-hidden">
+                            <div id="volumeBar" class="h-full bg-primary rounded-full transition-all duration-75 ease-out" style="width: 21%;"></div>
+                        </div>
+                        <div id="volumeThumb" class="absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-lg pointer-events-none transition-all duration-75 ease-out flex items-center justify-center left-[21%]">
+                            <div class="w-2 h-2 bg-primary rounded-full"></div>
                         </div>
                     </div>
                 </div>
 
                 <div>
-                    <div class="flex justify-between text-sm text-white mb-2 font-bold">
+                    <div class="flex justify-between text-sm text-white mb-4 font-bold">
                         <span>Average Margin (Basis Points)</span>
-                        <span>150 bps</span>
+                        <span id="marginDisplay">150 bps</span>
                     </div>
-                    <div class="h-2 bg-slate-700 rounded-full">
-                        <div class="w-[60%] h-full bg-primary rounded-full relative">
-                            <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 bg-white rounded-full shadow-lg cursor-pointer"></div>
+                    <div class="relative w-full h-2">
+                        <input type="range" min="50" max="400" step="10" value="150" id="marginInput" 
+                               class="w-full absolute z-20 opacity-0 cursor-pointer h-full">
+                        <div class="absolute top-0 left-0 h-2 bg-slate-700 rounded-full w-full overflow-hidden">
+                            <div id="marginBar" class="h-full bg-primary rounded-full transition-all duration-75 ease-out" style="width: 28.5%;"></div>
+                        </div>
+                        <div id="marginThumb" class="absolute top-1/2 -translate-y-1/2 w-6 h-6 bg-white rounded-full shadow-lg pointer-events-none transition-all duration-75 ease-out flex items-center justify-center left-[28.5%]">
+                            <div class="w-2 h-2 bg-primary rounded-full"></div>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-slate-900 border border-slate-700 p-8 rounded-2xl flex items-center justify-between">
+                <div class="bg-slate-900 border border-slate-700 p-8 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-6">
                     <div>
                         <div class="text-slate-400 text-sm mb-1">Your Monthly Residual</div>
-                        <div class="text-4xl font-bold text-white">$4,500<span class="text-primary">.00</span></div>
+                        <div class="text-4xl font-bold text-white flex items-baseline">
+                            $<span id="monthlyResult">4,500</span><span class="text-primary text-2xl">.00</span>
+                        </div>
                     </div>
-                    <div class="text-right">
+                    <div class="sm:text-right">
                         <div class="text-slate-400 text-sm mb-1">Annual Value</div>
-                        <div class="text-xl font-bold text-green-400">$54,000</div>
+                        <div class="text-xl font-bold text-green-400">$<span id="annualResult">54,000</span></div>
                     </div>
                 </div>
             </div>
@@ -167,17 +167,17 @@
             <h3 class="text-slate-400 text-sm uppercase tracking-widest mb-6">Portfolio Growth Projection</h3>
             
             <div class="flex-1 flex items-end justify-between gap-4 px-4 pb-4 border-b border-slate-700">
-                <div class="w-full bg-slate-800 rounded-t-lg h-[20%] group relative">
-                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">$2k</div>
+                <div class="w-full bg-slate-800 rounded-t-lg h-[20%] group relative transition-all duration-500 hover:bg-slate-700">
+                    <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">$<span id="graph1">2k</span></div>
                 </div>
-                <div class="w-full bg-slate-800 rounded-t-lg h-[35%] group relative">
-                     <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">$4.5k</div>
+                <div class="w-full bg-slate-800 rounded-t-lg h-[35%] group relative transition-all duration-500 hover:bg-slate-700">
+                     <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">$<span id="graph2">4.5k</span></div>
                 </div>
-                <div class="w-full bg-slate-800 rounded-t-lg h-[50%] group relative">
-                     <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity">$8k</div>
+                <div class="w-full bg-slate-800 rounded-t-lg h-[50%] group relative transition-all duration-500 hover:bg-slate-700">
+                     <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">$<span id="graph3">8k</span></div>
                 </div>
-                <div class="w-full bg-gradient-to-t from-primary/50 to-primary rounded-t-lg h-[75%] group relative shadow-[0_0_20px_rgba(14,165,233,0.3)]">
-                     <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-bold text-primary opacity-100">$12k</div>
+                <div class="w-full bg-gradient-to-t from-primary/50 to-primary rounded-t-lg h-[75%] group relative shadow-[0_0_20px_rgba(14,165,233,0.3)] transition-all duration-500">
+                     <div class="absolute -top-8 left-1/2 -translate-x-1/2 text-xs font-bold text-primary opacity-100 whitespace-nowrap">$<span id="graphMain">12k</span></div>
                 </div>
                 <div class="w-full bg-slate-800 rounded-t-lg h-[90%] group relative opacity-50"></div>
             </div>
@@ -185,12 +185,14 @@
                 <span>Month 1</span>
                 <span>Month 3</span>
                 <span>Month 6</span>
-                <span>Month 12</span>
-                <span>Month 18</span>
+                <span>Year 1</span>
+                <span>Year 2</span>
             </div>
         </div>
     </div>
 </section>
+
+
 
 <section class="py-24 bg-surface">
     <div class="max-w-7xl mx-auto px-6 text-center mb-16">
@@ -315,6 +317,93 @@
         </div>
     </div>
 </section>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const volumeInput = document.getElementById('volumeInput');
+        const marginInput = document.getElementById('marginInput');
+        
+        // Output Elements
+        const volumeDisplay = document.getElementById('volumeDisplay');
+        const marginDisplay = document.getElementById('marginDisplay');
+        const monthlyResult = document.getElementById('monthlyResult');
+        const annualResult = document.getElementById('annualResult');
+        
+        // Graph Elements
+        const graphMain = document.getElementById('graphMain');
+        const graph1 = document.getElementById('graph1');
+        const graph2 = document.getElementById('graph2');
+        const graph3 = document.getElementById('graph3');
+    
+        // Visual Elements (Bars & Thumbs)
+        const volumeBar = document.getElementById('volumeBar');
+        const volumeThumb = document.getElementById('volumeThumb');
+        const marginBar = document.getElementById('marginBar');
+        const marginThumb = document.getElementById('marginThumb');
+    
+        function formatCurrency(num) {
+            return new Intl.NumberFormat('en-US').format(Math.round(num));
+        }
+    
+        function formatCompact(num) {
+            return new Intl.NumberFormat('en-US', { notation: "compact", compactDisplay: "short" }).format(num);
+        }
+    
+        function updateCalculator() {
+            // Get Values
+            const volume = parseInt(volumeInput.value);
+            const marginBps = parseInt(marginInput.value);
+            
+            // Math Logic
+            // Formula: Volume * (BPS / 10000) * Split Share
+            // Assuming 60% Split based on your example ($500k * 150bps = $7500 Rev. Agent gets $4500 (60%))
+            const totalRevenue = volume * (marginBps / 10000);
+            const agentMonthly = totalRevenue * 0.60; 
+            const agentAnnual = agentMonthly * 12;
+    
+            // Update Text
+            volumeDisplay.textContent = '$' + formatCurrency(volume);
+            marginDisplay.textContent = marginBps + ' bps';
+            monthlyResult.textContent = formatCurrency(agentMonthly);
+            annualResult.textContent = formatCurrency(agentAnnual);
+    
+            // Update Graph Labels (Dynamic Projections)
+            // We project growth: Month 1 (20%), Month 3 (50%), Month 6 (80%), Year 1 (Current Calc)
+            graphMain.textContent = formatCompact(agentAnnual); // Year 1 Annualized
+            graph3.textContent = formatCompact(agentAnnual * 0.6); 
+            graph2.textContent = formatCompact(agentAnnual * 0.35);
+            graph1.textContent = formatCompact(agentAnnual * 0.15);
+    
+            // Update Visual Sliders (Progress Bar & Thumb Position)
+            updateVisuals(volumeInput, volumeBar, volumeThumb);
+            updateVisuals(marginInput, marginBar, marginThumb);
+        }
+    
+        function updateVisuals(input, bar, thumb) {
+            const min = parseInt(input.min);
+            const max = parseInt(input.max);
+            const val = parseInt(input.value);
+            
+            // Calculate percentage
+            const percentage = ((val - min) / (max - min)) * 100;
+            
+            // Update width of the colored bar
+            bar.style.width = percentage + '%';
+            
+            // Update left position of the thumb
+            // We adjust slightly to center the thumb on the value
+            thumb.style.left = `calc(${percentage}% - 12px)`; 
+        }
+    
+        // Event Listeners
+        volumeInput.addEventListener('input', updateCalculator);
+        marginInput.addEventListener('input', updateCalculator);
+    
+        // Initial Run
+        updateCalculator();
+    });
+    </script>
 
 
 {% endblock %}

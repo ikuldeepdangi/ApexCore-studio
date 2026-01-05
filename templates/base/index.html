@@ -3,6 +3,15 @@
 {% block title %}ApexCore Payments | High-Performance Payment Infrastructure{% endblock %}
 
 {% block content %}
+
+<style>
+    /* Add this to your main CSS file if hover pause doesn't work */
+.hover\:animate-pause:hover {
+    animation-play-state: paused;
+}
+</style>
+
+
 <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
     <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
 
@@ -74,48 +83,48 @@
                 <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#060b1a] to-transparent z-10 pointer-events-none"></div>
                 <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#060b1a] to-transparent z-10 pointer-events-none"></div>
 
-                <div class="flex animate-scroll whitespace-nowrap gap-10 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500">
-                    <span class="text-2xl font-display font-bold text-white">VISA</span>
-                    <span class="text-2xl font-display font-bold text-white">Mastercard</span>
-                    <span class="text-2xl font-display font-bold text-white">American Express</span>
-                    <span class="text-2xl font-display font-bold text-white">Discover</span>
-                    <span class="text-2xl font-display font-bold text-white">JCB</span>
-                    <span class="text-2xl font-display font-bold text-white">UnionPay</span>
-                    <span class="text-2xl font-display font-bold text-white">Maestro</span>
+                <div class="flex animate-scroll whitespace-nowrap gap-10 opacity-60 grayscale group-hover:grayscale-0 transition-all duration-500 items-center">
                     
-                    <span class="text-2xl font-display font-bold text-white">VISA</span>
-                    <span class="text-2xl font-display font-bold text-white">Mastercard</span>
-                    <span class="text-2xl font-display font-bold text-white">American Express</span>
-                    <span class="text-2xl font-display font-bold text-white">Discover</span>
-                    <span class="text-2xl font-display font-bold text-white">JCB</span>
-                    <span class="text-2xl font-display font-bold text-white">UnionPay</span>
-                    <span class="text-2xl font-display font-bold text-white">Maestro</span>
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="American Express" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Discover_Card_logo.svg" alt="Discover" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/JCB_logo.svg" alt="JCB" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/UnionPay_logo.svg" alt="UnionPay" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Maestro_logo.svg" alt="Maestro" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg" alt="Visa" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg" alt="Mastercard" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg" alt="American Express" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Discover_Card_logo.svg" alt="Discover" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/4/40/JCB_logo.svg" alt="JCB" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/1/1b/UnionPay_logo.svg" alt="UnionPay" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fd/Maestro_logo.svg" alt="Maestro" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
                 </div>
             </div>
 
             <div class="flex flex-col justify-center overflow-hidden relative group">
                 <p class="text-sm text-slate-500 mb-6 uppercase tracking-widest text-center">Seamless Integrations</p>
-
+            
                 <div class="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-[#060b1a] to-transparent z-10 pointer-events-none"></div>
                 <div class="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-[#060b1a] to-transparent z-10 pointer-events-none"></div>
-
-                <div class="flex animate-scroll whitespace-nowrap gap-10 opacity-40 grayscale group-hover:grayscale-0 transition-all duration-500" style="animation-delay: -5s;"> <span class="text-2xl font-display font-bold text-white">Shopify</span>
-                    <span class="text-2xl font-display font-bold text-white">WooCommerce</span>
-                    <span class="text-2xl font-display font-bold text-white">BigCommerce</span>
-                    <span class="text-2xl font-display font-bold text-white">Magento</span>
-                    <span class="text-2xl font-display font-bold text-white">Salesforce</span>
-                    <span class="text-2xl font-display font-bold text-white">Wix</span>
-                    <span class="text-2xl font-display font-bold text-white">PrestaShop</span>
-                    <span class="text-2xl font-display font-bold text-white">OpenCart</span>
+            
+                <div class="flex animate-scroll whitespace-nowrap gap-10 opacity-60 grayscale group-hover:grayscale-0 transition-all duration-500 items-center" style="animation-delay: -5s;"> 
                     
-                    <span class="text-2xl font-display font-bold text-white">Shopify</span>
-                    <span class="text-2xl font-display font-bold text-white">WooCommerce</span>
-                    <span class="text-2xl font-display font-bold text-white">BigCommerce</span>
-                    <span class="text-2xl font-display font-bold text-white">Magento</span>
-                    <span class="text-2xl font-display font-bold text-white">Salesforce</span>
-                    <span class="text-2xl font-display font-bold text-white">Wix</span>
-                    <span class="text-2xl font-display font-bold text-white">PrestaShop</span>
-                    <span class="text-2xl font-display font-bold text-white">OpenCart</span>
+                    <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/shopify.svg" alt="Shopify" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magento_Logo.svg" alt="Magento" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg" alt="Wix" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+            
+                    <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/shopify.svg" alt="Shopify" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    
+                    <img src="https://raw.githubusercontent.com/gilbarbara/logos/master/logos/woocommerce.svg" alt="WooCommerce" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    
+                    
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Magento_Logo.svg" alt="Magento" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg" alt="Salesforce" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/7/76/Wix.com_website_logo.svg" alt="Wix" class="h-8 w-auto object-contain brightness-200 group-hover:brightness-100 transition-all">
                 </div>
             </div>
 
@@ -219,10 +228,10 @@
 
             <div class="md:col-span-1 border border-slate-700 bg-slate-900/50 p-6 rounded-3xl hover:bg-slate-800 transition-colors cursor-pointer group hover:border-slate-600">
                 <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 mb-4 group-hover:text-white group-hover:bg-slate-700 transition-all">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
                 </div>
-                <h4 class="text-lg font-bold text-white mb-2">Offshore Banking</h4>
-                <p class="text-sm text-slate-400">Tax-friendly jurisdictions.</p>
+                <h4 class="text-lg font-bold text-white mb-2">High-Risk Payments</h4>
+                <p class="text-sm text-slate-400">Stable processing for hard-to-place industries.</p>
             </div>
 
             <div id="more-solutions" class="hidden md:contents">
@@ -236,12 +245,12 @@
                 </div>
 
                 <div class="md:col-span-1 border border-slate-700 bg-slate-900/50 p-6 rounded-3xl hover:bg-slate-800 transition-colors cursor-pointer group hover:border-slate-600">
-                     <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 mb-4 group-hover:text-white group-hover:bg-slate-700 transition-all">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                    </div>
-                    <h4 class="text-lg font-bold text-white mb-2">Crypto Settlement</h4>
-                    <p class="text-sm text-slate-400">USDT & BTC Payouts.</p>
-                </div>
+                    <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 mb-4 group-hover:text-white group-hover:bg-slate-700 transition-all">
+                       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                   </div>
+                   <h4 class="text-lg font-bold text-white mb-2">Chargeback Mitigation</h4>
+                   <p class="text-sm text-slate-400">Advanced strategies to dispute invalid chargebacks and protect revenue.</p>
+               </div>
 
                 <div class="md:col-span-1 border border-slate-700 bg-slate-900/50 p-6 rounded-3xl hover:bg-slate-800 transition-colors cursor-pointer group hover:border-slate-600">
                      <div class="w-10 h-10 bg-slate-800 rounded-xl flex items-center justify-center text-slate-400 mb-4 group-hover:text-white group-hover:bg-slate-700 transition-all">
@@ -259,21 +268,10 @@
                     <p class="text-sm text-slate-400">Terminals & Card Readers.</p>
                 </div>
 
-                
-
             </div>
         </div>
         
-        <div class="mt-12 text-center md:hidden">
-            <button onclick="document.getElementById('more-solutions').classList.remove('hidden'); this.style.display='none'" class="px-8 py-3 rounded-full border border-slate-600 text-white hover:bg-slate-800 transition-all">
-                View All Solutions
-            </button>
-        </div>
-        <div class="mt-12 text-center hidden md:block">
-             <button class="inline-flex items-center gap-2 text-primary  transition-colors font-bold">
-                View All Solutions <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
-            </button>
-        </div>
+       
 
     </div>
 </section>
@@ -424,51 +422,147 @@
      </div>
 </section>
 
-<section class="py-24">
-    <div class="max-w-7xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-3xl font-display font-bold text-white">What Our Partners Say</h2>
-        </div>
-        <div class="grid md:grid-cols-3 gap-8">
-            <div class="glass-card p-8 rounded-xl relative">
+<section class="py-24 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 mb-16 text-center">
+        <h2 class="text-3xl font-display font-bold text-white">What Our Partners Say</h2>
+        <p class="text-slate-400 mt-4">Trusted by high-growth merchants worldwide.</p>
+    </div>
+
+    <div class="relative w-full group">
+        
+        <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#020617] to-transparent z-10 pointer-events-none"></div>
+        <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#020617] to-transparent z-10 pointer-events-none"></div>
+
+        <div class="flex animate-scroll gap-6 w-max hover:animate-pause">
+            
+            <div class="w-[400px] glass-card p-8 rounded-xl relative flex-shrink-0 border border-slate-800 bg-slate-900/50">
                 <div class="text-primary text-4xl font-serif absolute top-4 left-4 opacity-50">"</div>
-                <p class="text-slate-300 mb-6 relative z-10 pt-4">"Other processors shut us down without warning. ApexCore got us back up in 48 hours and we've processed $2M+ since without a single hold."</p>
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 border-2 border-primary/30 overflow-hidden flex-shrink-0">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=b6e3f4" alt="David R." class="w-full h-full object-cover">
+                <p class="text-slate-300 mb-6 relative z-10 pt-4 text-sm leading-relaxed">"We scaled from $50k to $300k in month three, and our previous Stripe account got frozen immediately. ApexCore had a dedicated MID ready for us in 72 hours. We haven't missed a payout since."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
                     </div>
                     <div>
-                        <div class="text-white font-bold text-sm">David R.</div>
-                        <div class="text-slate-500 text-xs">CEO, Supplement Brand</div>
+                        <div class="text-white font-bold text-sm">Marcus D.</div>
+                        <div class="text-slate-500 text-xs">Founder, E-Com Scale</div>
                     </div>
                 </div>
             </div>
-            <div class="glass-card p-8 rounded-xl relative">
+
+            <div class="w-[400px] glass-card p-8 rounded-xl relative flex-shrink-0 border border-slate-800 bg-slate-900/50">
                 <div class="text-primary text-4xl font-serif absolute top-4 left-4 opacity-50">"</div>
-                <p class="text-slate-300 mb-6 relative z-10 pt-4">"The chargeback protection tool is a lifesaver. We operate in a high-risk sector, and this tool alone saved us 15% in revenue last month."</p>
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 border-2 border-primary/30 overflow-hidden flex-shrink-0">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah&backgroundColor=b6e3f4" alt="Sarah K." class="w-full h-full object-cover">
+                <p class="text-slate-300 mb-6 relative z-10 pt-4 text-sm leading-relaxed">"Operating in the nutraceutical space means chargebacks are inevitable. The mitigation tools here are legit—our dispute win rate went from 20% to nearly 85% within the first quarter."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-white font-bold text-sm">Jessica L.</div>
+                        <div class="text-slate-500 text-xs">CEO, NutraLife</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-[400px] glass-card p-8 rounded-xl relative flex-shrink-0 border border-slate-800 bg-slate-900/50">
+                <div class="text-primary text-4xl font-serif absolute top-4 left-4 opacity-50">"</div>
+                <p class="text-slate-300 mb-6 relative z-10 pt-4 text-sm leading-relaxed">"I'm a technical founder, so clean documentation matters. Their API was actually readable, and the sandbox environment behaved exactly like production. Integration took us half a day."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-white font-bold text-sm">Alex Chen</div>
+                        <div class="text-slate-500 text-xs">CTO, SaaS Platform</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-[400px] glass-card p-8 rounded-xl relative flex-shrink-0 border border-slate-800 bg-slate-900/50">
+                <div class="text-primary text-4xl font-serif absolute top-4 left-4 opacity-50">"</div>
+                <p class="text-slate-300 mb-6 relative z-10 pt-4 text-sm leading-relaxed">"We needed to accept cards in Europe but pay our affiliates in USDT. The multi-currency settlement here is seamless. It just works, without the usual banking headaches."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
                     </div>
                     <div>
                         <div class="text-white font-bold text-sm">Sarah K.</div>
-                        <div class="text-slate-500 text-xs">Founder, Digital Goods</div>
+                        <div class="text-slate-500 text-xs">Director, Forex Global</div>
                     </div>
                 </div>
             </div>
-            <div class="glass-card p-8 rounded-xl relative">
+
+            <div class="w-[400px] glass-card p-8 rounded-xl relative flex-shrink-0 border border-slate-800 bg-slate-900/50">
                 <div class="text-primary text-4xl font-serif absolute top-4 left-4 opacity-50">"</div>
-                <p class="text-slate-300 mb-6 relative z-10 pt-4">"Finally, a team that understands crypto. The onboarding was smooth and the tech integration was flawless."</p>
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary/20 to-primary/40 border-2 border-primary/30 overflow-hidden flex-shrink-0">
-                        <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mike&backgroundColor=b6e3f4" alt="Mike T." class="w-full h-full object-cover">
+                <p class="text-slate-300 mb-6 relative z-10 pt-4 text-sm leading-relaxed">"We scaled from $50k to $300k in month three, and our previous Stripe account got frozen immediately. ApexCore had a dedicated MID ready for us in 72 hours. We haven't missed a payout since."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
                     </div>
                     <div>
-                        <div class="text-white font-bold text-sm">Mike T.</div>
-                        <div class="text-slate-500 text-xs">Director, Forex Platform</div>
+                        <div class="text-white font-bold text-sm">Marcus D.</div>
+                        <div class="text-slate-500 text-xs">Founder, E-Com Scale</div>
                     </div>
                 </div>
             </div>
+
+            <div class="w-[400px] glass-card p-8 rounded-xl relative flex-shrink-0 border border-slate-800 bg-slate-900/50">
+                <div class="text-primary text-4xl font-serif absolute top-4 left-4 opacity-50">"</div>
+                <p class="text-slate-300 mb-6 relative z-10 pt-4 text-sm leading-relaxed">"Operating in the nutraceutical space means chargebacks are inevitable. The mitigation tools here are legit—our dispute win rate went from 20% to nearly 85% within the first quarter."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-white font-bold text-sm">Jessica L.</div>
+                        <div class="text-slate-500 text-xs">CEO, NutraLife</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-[400px] glass-card p-8 rounded-xl relative flex-shrink-0 border border-slate-800 bg-slate-900/50">
+                <div class="text-primary text-4xl font-serif absolute top-4 left-4 opacity-50">"</div>
+                <p class="text-slate-300 mb-6 relative z-10 pt-4 text-sm leading-relaxed">"I'm a technical founder, so clean documentation matters. Their API was actually readable, and the sandbox environment behaved exactly like production. Integration took us half a day."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-white font-bold text-sm">Alex Chen</div>
+                        <div class="text-slate-500 text-xs">CTO, SaaS Platform</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-[400px] glass-card p-8 rounded-xl relative flex-shrink-0 border border-slate-800 bg-slate-900/50">
+                <div class="text-primary text-4xl font-serif absolute top-4 left-4 opacity-50">"</div>
+                <p class="text-slate-300 mb-6 relative z-10 pt-4 text-sm leading-relaxed">"We needed to accept cards in Europe but pay our affiliates in USDT. The multi-currency settlement here is seamless. It just works, without the usual banking headaches."</p>
+                <div class="flex items-center gap-3 mt-auto">
+                    <div class="w-10 h-10 rounded-full bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                          <path fill-rule="evenodd" d="M7.5 6a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM3.751 20.105a8.25 8.25 0 0116.498 0 .75.75 0 01-.437.695A18.683 18.683 0 0112 22.5c-2.786 0-5.433-.608-7.812-1.7a.75.75 0 01-.437-.695z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="text-white font-bold text-sm">Sarah K.</div>
+                        <div class="text-slate-500 text-xs">Director, Forex Global</div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
