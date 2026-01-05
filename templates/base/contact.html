@@ -1,483 +1,166 @@
 {% extends "base/base.html" %}
 
-{% block title %}Start Application | ApexCore Payments{% endblock %}
+{% block title %}Contact Us | ApexCore Payments{% endblock %}
 
 {% block content %}
-<section class="relative min-h-screen pt-24 pb-24 overflow-hidden bg-background">
+<section class="relative min-h-screen flex items-center pt-20 pb-24 overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/5 rounded-full blur-[120px]"></div>
-        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-indigo-900/10 rounded-full blur-[100px]"></div>
+        <div class="absolute top-0 right-0 w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]"></div>
+        <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-blue-900/10 rounded-full blur-[100px]"></div>
     </div>
 
-    <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <div class="max-w-7xl mx-auto px-6 relative z-10 w-full">
         
-        <div class="text-center mb-12">
-            <h1 class="text-4xl md:text-6xl font-display font-bold text-white mb-4">
-                Let's Get <span class="text-primary">Started</span>
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-slate-700 bg-slate-800/50 backdrop-blur-sm mb-6">
+                <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span>
+                <span class="text-xs font-medium text-slate-300 uppercase tracking-wide">24/7 Support</span>
+            </div>
+            <h1 class="text-5xl md:text-6xl font-display font-bold text-white mb-6">
+                Let's Talk <span class="text-primary">Business</span>
             </h1>
-            <p class="text-slate-400 max-w-2xl mx-auto">
-                Complete the application below to get pre-approved. Our underwriting team will review your file within 24 hours.
+            <p class="text-xl text-slate-400">
+                Ready to upgrade your payment infrastructure? Our team of high-risk experts is standing by to get you approved.
             </p>
         </div>
 
-        <div class="mb-12">
-            <div class="flex items-center justify-between relative max-w-3xl mx-auto">
-                <div class="absolute left-0 top-1/2 -translate-y-1/2 w-full h-1 bg-slate-800 -z-10 rounded-full"></div>
-                <div id="progress-line" class="absolute left-0 top-1/2 -translate-y-1/2 h-1 bg-primary -z-10 rounded-full transition-all duration-300" style="width: 0%"></div>
-
-                <div class="step-indicator w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center font-bold border-4 border-background transition-all ring-2 ring-primary">1</div>
-                <div class="step-indicator w-10 h-10 rounded-full bg-slate-800 text-slate-500 flex items-center justify-center font-bold border-4 border-background transition-all">2</div>
-                <div class="step-indicator w-10 h-10 rounded-full bg-slate-800 text-slate-500 flex items-center justify-center font-bold border-4 border-background transition-all">3</div>
-                <div class="step-indicator w-10 h-10 rounded-full bg-slate-800 text-slate-500 flex items-center justify-center font-bold border-4 border-background transition-all">4</div>
-                <div class="step-indicator w-10 h-10 rounded-full bg-slate-800 text-slate-500 flex items-center justify-center font-bold border-4 border-background transition-all">5</div>
-                <div class="step-indicator w-10 h-10 rounded-full bg-slate-800 text-slate-500 flex items-center justify-center font-bold border-4 border-background transition-all">6</div>
-            </div>
-            <div class="flex justify-between max-w-3xl mx-auto mt-2 text-xs text-slate-500 font-medium px-2">
-                <span>Signer</span>
-                <span>Business</span>
-                <span>Owner</span>
-                <span>Banking</span>
-                <span>Processing</span>
-                <span>Volumes</span>
-            </div>
-        </div>
-
-        <div class="glass-card rounded-2xl border border-slate-700/50 shadow-2xl overflow-hidden">
-            <form id="application-form" action="/submit-application" method="POST" class="p-8 md:p-12">
-                
-                <div class="form-step" data-step="1">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <span class="w-8 h-8 rounded bg-primary/20 text-primary flex items-center justify-center text-sm">01</span> 
-                        Signer Information
-                    </h3>
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Signer First Name *</label>
-                            <input type="text" name="signer_first_name" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder-slate-600" placeholder="John">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Signer Last Name *</label>
-                            <input type="text" name="signer_last_name" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder-slate-600" placeholder="Doe">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Signer Phone *</label>
-                            <input type="tel" name="signer_phone" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder-slate-600" placeholder="(555) 123-4567">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Signer Email *</label>
-                            <input type="email" name="signer_email" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder-slate-600" placeholder="john@company.com">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Business Tax ID (EIN) *</label>
-                            <input type="text" name="tax_id" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder-slate-600" placeholder="XX-XXXXXXX">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Business Start Date *</label>
-                            <input type="date" name="start_date" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder-slate-500">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Number of Locations</label>
-                            <input type="number" name="num_locations" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder-slate-600" placeholder="1">
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">State of Formation *</label>
-                            <input type="text" name="state_formation" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all placeholder-slate-600" placeholder="e.g. Delaware">
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-step hidden" data-step="2">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <span class="w-8 h-8 rounded bg-primary/20 text-primary flex items-center justify-center text-sm">02</span> 
-                        Business Details
-                    </h3>
+        <div class="grid lg:grid-cols-12 gap-12 items-start">
+            
+            <div class="lg:col-span-4 space-y-8">
+                <div class="glass-card p-8 rounded-2xl border border-slate-700/50">
+                    <h3 class="text-xl font-bold text-white mb-6">Contact Information</h3>
+                    
                     <div class="space-y-6">
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Legal Business Name *</label>
-                            <input type="text" name="legal_name" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="LLC or Corp Name">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 mb-1">Email Support</p>
+                                <a href="mailto:support@apexcorepay.com" class="text-white font-medium hover:text-primary transition-colors">support@apexcorepay.com</a>
+                            </div>
                         </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Corporate Legal Address *</label>
-                            <input type="text" name="legal_address" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Street, City, State, Zip">
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">
+                                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 mb-1">Sales Hotline</p>
+                                <a href="tel:+17272209449<" class="text-white font-medium hover:text-primary transition-colors">+1 727 220 9449</a>
+                            </div>
                         </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">DBA (Doing Business As) *</label>
-                            <input type="text" name="dba_name" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Name on Storefront">
+
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-lg bg-green-500/10 flex items-center justify-center text-green-500 flex-shrink-0">
+                                <!-- WhatsApp Icon -->
+                                <svg class="w-5 h-5" viewBox="0 0 32 32" fill="currentColor">
+                                    <path d="M16.003 3C9.374 3 4 8.373 4 15c0 2.655.844 5.118 2.285 7.137L4 29l7.086-2.24A11.94 11.94 0 0016.003 27C22.627 27 28 21.627 28 15S22.627 3 16.003 3zm0 21.75a9.65 9.65 0 01-4.915-1.342l-.35-.207-4.204 1.328 1.37-4.096-.228-.37A9.676 9.676 0 016.35 15c0-5.326 4.326-9.65 9.653-9.65 5.326 0 9.647 4.324 9.647 9.65 0 5.326-4.32 9.75-9.647 9.75zm5.298-7.14c-.29-.145-1.715-.846-1.98-.942-.264-.097-.456-.145-.648.145-.193.29-.744.942-.912 1.135-.168.193-.336.217-.626.072-.29-.145-1.225-.45-2.333-1.436-.862-.77-1.444-1.72-1.612-2.01-.168-.29-.018-.447.126-.592.13-.13.29-.336.434-.504.145-.168.193-.29.29-.483.097-.193.048-.362-.024-.507-.072-.145-.648-1.566-.888-2.15-.233-.56-.47-.484-.648-.493h-.553c-.193 0-.507.072-.773.362s-1.013.99-1.013 2.417 1.037 2.807 1.182 3 .145.29 1.182 1.806c1.037 1.516 2.03 2.125 2.772 2.416.742.29 1.49.446 2.004.287.306-.097.942-.386 1.078-.758.135-.372.135-.69.097-.758-.048-.072-.264-.12-.553-.264z"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-500 mb-1">WhatsApp Support</p>
+                                <a href="https://wa.me/17272209449?text=Hello%20ApexCore%20Payments%2C%20I%E2%80%99m%20contacting%20you%20from%20the%20Contact%20Us%20page%20and%20would%20like%20help%20with%20payment%20processing."
+                                target="_blank"
+                                rel="noopener"
+                                class="text-white font-medium hover:text-green-400 transition-colors">
+                                    Chat on WhatsApp
+                                </a>
+
+                            </div>
                         </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Website URL</label>
-                            <input type="url" name="website_url" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="https://">
-                        </div>
+                        
+
+                        
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-2xl border border-slate-700/50 bg-slate-900/50">
+                    <h4 class="text-white font-bold mb-2">Need answers fast?</h4>
+                    <p class="text-sm text-slate-400 mb-4">Check our documentation or ask Leo, our AI assistant.</p>
+                    <a href="#" onclick="document.getElementById('chatbot-toggle').click(); return false;" class="text-primary text-sm font-bold hover:underline">Chat with Leo &rarr;</a>
+                </div>
+            </div>
+
+            
+
+            <div class="lg:col-span-8">
+                <div class="glass-card p-8 md:p-10 rounded-2xl border border-slate-700 shadow-2xl relative overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-primary/10 rounded-bl-full -mr-16 -mt-16 pointer-events-none"></div>
+                    
+                    <h3 class="text-2xl font-bold text-white mb-6">Send us a message</h3>
+                    
+                    <form id="contact-form" action="/submit" method="POST" class="space-y-6">
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-300">Mailing Name (If different)</label>
-                                <input type="text" name="mailing_name" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            <div>
+                                <label for="firstName" class="block text-sm font-medium text-slate-300 mb-2">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" required 
+                                       class="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                       placeholder="John">
                             </div>
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-300">Mailing Address</label>
-                                <input type="text" name="mailing_address" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-step hidden" data-step="3">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <span class="w-8 h-8 rounded bg-primary/20 text-primary flex items-center justify-center text-sm">03</span> 
-                        Ownership & Management
-                    </h3>
-                    
-                    <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800 mb-6">
-                        <h4 class="text-primary font-bold mb-4 text-sm uppercase tracking-wide">Company Manager</h4>
-                        <div class="grid md:grid-cols-2 gap-4">
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">First Name</label>
-                                <input type="text" name="manager_first" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none">
-                            </div>
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Last Name</label>
-                                <input type="text" name="manager_last" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none">
-                            </div>
-                            <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Email</label>
-                                <input type="email" name="manager_email" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none">
-                            </div>
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Phone</label>
-                                <input type="tel" name="manager_phone" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none">
+                            <div>
+                                <label for="lastName" class="block text-sm font-medium text-slate-300 mb-2">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" required
+                                       class="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                       placeholder="Doe">
                             </div>
                         </div>
-                    </div>
-
-                    <div class="bg-slate-900/50 p-6 rounded-xl border border-slate-800">
-                        <h4 class="text-primary font-bold mb-4 text-sm uppercase tracking-wide">Primary Owner (Beneficial Owner)</h4>
-                         <div class="grid md:grid-cols-2 gap-4 mb-4">
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Owner First Name</label>
-                                <input type="text" name="owner_first" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none">
-                            </div>
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Owner Last Name</label>
-                                <input type="text" name="owner_last" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none">
-                            </div>
-                        </div>
-                        <div class="grid md:grid-cols-2 gap-4 mb-4">
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Ownership %</label>
-                                <input type="number" name="owner_percent" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none" placeholder="e.g. 100">
-                            </div>
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Date of Birth</label>
-                                <input type="date" name="owner_dob" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none text-slate-400">
-                            </div>
-                        </div>
-                         <div class="space-y-2 mb-4">
-                            <label class="text-sm font-medium text-slate-400">Home Address</label>
-                            <input type="text" name="owner_address" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none">
-                        </div>
-                         <div class="grid md:grid-cols-2 gap-4">
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Social Security Number</label>
-                                <input type="password" name="owner_ssn" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none" placeholder="XXX-XX-XXXX">
-                            </div>
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-400">Mobile Phone</label>
-                                <input type="tel" name="owner_mobile" required class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-step hidden" data-step="4">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <span class="w-8 h-8 rounded bg-primary/20 text-primary flex items-center justify-center text-sm">04</span> 
-                        Banking Information
-                    </h3>
-                    <div class="bg-blue-900/10 border border-blue-500/20 p-4 rounded-lg mb-8 flex items-start gap-3">
-                        <svg class="w-5 h-5 text-blue-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-                        <p class="text-sm text-blue-200">This account will be used for daily deposits of your funds. Must be a business checking account matching the legal entity name.</p>
-                    </div>
-
-                    <div class="space-y-6">
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Bank Name</label>
-                            <input type="text" name="bank_name" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                        </div>
-                         <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Name on Account</label>
-                            <input type="text" name="bank_account_name" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Must match Legal Business Name">
-                        </div>
+                        
                         <div class="grid md:grid-cols-2 gap-6">
-                            <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-300">Routing Number (9 Digits)</label>
-                                <input type="number" name="routing_number" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="XXXXXXXXX">
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-slate-300 mb-2">Email Address *</label>
+                                <input type="email" id="email" name="email" required
+                                       class="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                       placeholder="john@company.com">
                             </div>
-                             <div class="space-y-2">
-                                <label class="text-sm font-medium text-slate-300">Account Number</label>
-                                <input type="number" name="account_number" required class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
+                            <div>
+                                <label for="phone" class="block text-sm font-medium text-slate-300 mb-2">Phone Number *</label>
+                                <input type="tel" id="phone" name="phone" required
+                                       class="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                       placeholder="+1 (555) 000-0000">
                             </div>
                         </div>
-                    </div>
+                        
+                        <div>
+                            <label for="company" class="block text-sm font-medium text-slate-300 mb-2">Company Name</label>
+                            <input type="text" id="company" name="company"
+                                   class="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all"
+                                   placeholder="Your Business LLC">
+                        </div>
+                        
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-slate-300 mb-2">How can we help? *</label>
+                            <textarea id="message" name="message" rows="5" required
+                                      class="w-full px-4 py-3 rounded-lg bg-slate-900/50 border border-slate-700 text-white placeholder-slate-500 focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all resize-none"
+                                      placeholder="Tell us about your processing volume, industry, or specific needs..."></textarea>
+                        </div>
+                        
+                        <button type="submit" 
+                                class="w-full px-10 py-4 rounded-lg bg-primary hover:bg-primary-dark text-white font-bold shadow-lg shadow-primary/20 transition-all duration-300 transform hover:-translate-y-0.5">
+                            Send Message
+                        </button>
+                    </form>
                 </div>
-
-                <div class="form-step hidden" data-step="5">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <span class="w-8 h-8 rounded bg-primary/20 text-primary flex items-center justify-center text-sm">05</span> 
-                        Processing Profile
-                    </h3>
-                    <p class="text-slate-400 text-sm mb-6">How do you accept payments? (Must total 100%)</p>
-                    
-                    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 mb-8">
-                         <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-400 uppercase">Swipe / Retail</label>
-                            <div class="relative">
-                                <input type="number" name="pct_swipe" class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none" placeholder="0">
-                                <span class="absolute right-3 top-2 text-slate-500">%</span>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-400 uppercase">Keyed / Phone</label>
-                            <div class="relative">
-                                <input type="number" name="pct_keyed" class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none" placeholder="0">
-                                <span class="absolute right-3 top-2 text-slate-500">%</span>
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-xs font-bold text-slate-400 uppercase">eCommerce</label>
-                            <div class="relative">
-                                <input type="number" name="pct_ecom" class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none" placeholder="0">
-                                <span class="absolute right-3 top-2 text-slate-500">%</span>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-4 pt-6 border-t border-slate-800">
-                        <label class="text-sm font-medium text-slate-300 block">Do you bill customers on a recurring basis?</label>
-                        <div class="flex gap-4">
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="radio" name="recurring" value="yes" class="form-radio text-primary bg-slate-900 border-slate-700">
-                                <span class="text-white">Yes</span>
-                            </label>
-                            <label class="flex items-center gap-2 cursor-pointer">
-                                <input type="radio" name="recurring" value="no" class="form-radio text-primary bg-slate-900 border-slate-700" checked>
-                                <span class="text-white">No</span>
-                            </label>
-                        </div>
-                    </div>
-
-                     <div class="space-y-4 pt-6 mt-6 border-t border-slate-800">
-                        <label class="text-sm font-medium text-slate-300 block">Customer Breakdown (Must total 100%)</label>
-                        <div class="grid grid-cols-3 gap-4">
-                             <div class="relative">
-                                <input type="number" name="b2c" class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none text-center" placeholder="Consumer">
-                                <span class="text-xs text-slate-500 block text-center mt-1">Consumer</span>
-                            </div>
-                            <div class="relative">
-                                <input type="number" name="b2b" class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none text-center" placeholder="Business">
-                                <span class="text-xs text-slate-500 block text-center mt-1">Business</span>
-                            </div>
-                             <div class="relative">
-                                <input type="number" name="b2g" class="w-full px-4 py-2 rounded bg-slate-900 border border-slate-700 text-white focus:border-primary outline-none text-center" placeholder="Gov">
-                                <span class="text-xs text-slate-500 block text-center mt-1">Gov</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="form-step hidden" data-step="6">
-                    <h3 class="text-2xl font-bold text-white mb-6 flex items-center gap-3">
-                        <span class="w-8 h-8 rounded bg-primary/20 text-primary flex items-center justify-center text-sm">06</span> 
-                        Volume & Limits
-                    </h3>
-                    
-                    <div class="grid md:grid-cols-2 gap-6">
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Annual Gross Volume *</label>
-                            <div class="relative">
-                                <span class="absolute left-3 top-3 text-slate-500">$</span>
-                                <input type="number" name="annual_volume" required class="w-full pl-8 pr-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                            </div>
-                        </div>
-                        <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Requested Monthly Limit *</label>
-                             <div class="relative">
-                                <span class="absolute left-3 top-3 text-slate-500">$</span>
-                                <input type="number" name="monthly_limit" required class="w-full pl-8 pr-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                            </div>
-                        </div>
-                         <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Average Ticket Size *</label>
-                             <div class="relative">
-                                <span class="absolute left-3 top-3 text-slate-500">$</span>
-                                <input type="number" name="avg_ticket" required class="w-full pl-8 pr-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                            </div>
-                        </div>
-                         <div class="space-y-2">
-                            <label class="text-sm font-medium text-slate-300">Highest Ticket Size *</label>
-                             <div class="relative">
-                                <span class="absolute left-3 top-3 text-slate-500">$</span>
-                                <input type="number" name="high_ticket" required class="w-full pl-8 pr-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="space-y-2 mt-6">
-                        <label class="text-sm font-medium text-slate-300">Fulfillment Timeframe</label>
-                        <select name="fulfillment_time" class="w-full px-4 py-3 rounded-lg bg-slate-900 border border-slate-700 text-white focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all">
-                            <option value="24h">Within 24 hours</option>
-                            <option value="2-3days">2-3 Days</option>
-                            <option value="3-7days">3-7 Days</option>
-                            <option value="7-14days">7-14 Days</option>
-                            <option value="14-30days">14-30 Days</option>
-                            <option value="30+days">30+ Days</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="flex justify-between mt-10 pt-6 border-t border-slate-800/50">
-                    <button type="button" id="prev-btn" class="hidden px-8 py-3 rounded-full border border-slate-600 text-white hover:bg-slate-800 transition-all font-medium">
-                        &larr; Previous
-                    </button>
-                    <div class="flex-1"></div> <button type="button" id="next-btn" class="px-10 py-3 rounded-full bg-primary hover:bg-primary-dark text-white font-bold shadow-lg shadow-primary/20 transition-all">
-                        Next Step &rarr;
-                    </button>
-                     <button type="submit" id="submit-btn" class="hidden px-10 py-3 rounded-full bg-green-600 hover:bg-green-500 text-white font-bold shadow-lg shadow-green-600/20 transition-all">
-                        Submit Application
-                    </button>
-                </div>
-            </form>
+            </div>
         </div>
     </div>
 </section>
 
-{% endblock %}
 
-{% block extra_scripts %}
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const form = document.getElementById('application-form');
-        const steps = form.querySelectorAll('.form-step');
-        const indicators = document.querySelectorAll('.step-indicator');
-        const progressLine = document.getElementById('progress-line');
-        const nextBtn = document.getElementById('next-btn');
-        const prevBtn = document.getElementById('prev-btn');
-        const submitBtn = document.getElementById('submit-btn');
-        
-        let currentStep = 1;
-        const totalSteps = steps.length;
 
-        function updateUI() {
-            // Hide all steps, show current
-            steps.forEach(step => {
-                if (parseInt(step.dataset.step) === currentStep) {
-                    step.classList.remove('hidden');
-                } else {
-                    step.classList.add('hidden');
-                }
-            });
 
-            // Update Buttons
-            if (currentStep === 1) {
-                prevBtn.classList.add('hidden');
-            } else {
-                prevBtn.classList.remove('hidden');
-            }
 
-            if (currentStep === totalSteps) {
-                nextBtn.classList.add('hidden');
-                submitBtn.classList.remove('hidden');
-            } else {
-                nextBtn.classList.remove('hidden');
-                submitBtn.classList.add('hidden');
-            }
 
-            // Update Progress Bar
-            const progress = ((currentStep - 1) / (totalSteps - 1)) * 100;
-            progressLine.style.width = `${progress}%`;
-
-            // Update Indicators
-            indicators.forEach((ind, index) => {
-                const stepNum = index + 1;
-                ind.classList.remove('bg-primary', 'text-white', 'ring-2', 'ring-primary', 'bg-slate-800', 'text-slate-500', 'bg-green-500');
-                
-                if (stepNum < currentStep) {
-                    // Completed step
-                    ind.classList.add('bg-green-500', 'text-white');
-                    ind.innerHTML = '✓';
-                } else if (stepNum === currentStep) {
-                    // Active step
-                    ind.classList.add('bg-primary', 'text-white', 'ring-2', 'ring-primary');
-                    ind.innerHTML = stepNum;
-                } else {
-                    // Future step
-                    ind.classList.add('bg-slate-800', 'text-slate-500');
-                    ind.innerHTML = stepNum;
-                }
-            });
-            
-            // Scroll to top of form
-            form.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
-
-        function validateStep(step) {
-            const currentStepDiv = form.querySelector(`.form-step[data-step="${step}"]`);
-            const inputs = currentStepDiv.querySelectorAll('input[required], select[required]');
-            let valid = true;
-            
-            inputs.forEach(input => {
-                if (!input.value) {
-                    valid = false;
-                    input.classList.add('border-red-500', 'ring-1', 'ring-red-500');
-                    // Remove error style on input
-                    input.addEventListener('input', function() {
-                        this.classList.remove('border-red-500', 'ring-1', 'ring-red-500');
-                    }, { once: true });
-                }
-            });
-
-            if (!valid) {
-                // Shake animation or toast could go here
-                alert('Please fill in all required fields.');
-            }
-            return valid;
-        }
-
-        nextBtn.addEventListener('click', () => {
-            if (validateStep(currentStep)) {
-                if (currentStep < totalSteps) {
-                    currentStep++;
-                    updateUI();
-                }
-            }
-        });
-
-        prevBtn.addEventListener('click', () => {
-            if (currentStep > 1) {
-                currentStep--;
-                updateUI();
-            }
-        });
-
-        // Initialize
-        updateUI();
-        
-        // Handle Form Submission (Mock)
-        form.addEventListener('submit', function(e) {
-            e.preventDefault();
-            // In a real scenario, you would use fetch() here to send data to backend
-            // Since backend logic isn't fully set up for this specific form, we simulate success
-            
-            const btn = submitBtn;
-            const originalText = btn.innerText;
-            btn.disabled = true;
-            btn.innerText = 'Processing...';
-
-            setTimeout(() => {
-                // Simulate success
-                alert('Application Submitted Successfully! Our underwriting team will contact you shortly.');
-                window.location.href = '/'; // Redirect to home
-            }, 1500);
-        });
-    });
-</script>
+<div id="toast" class="fixed bottom-6 right-6 bg-slate-800 border rounded-lg shadow-2xl px-6 py-4 flex items-center gap-3 z-50 transform translate-y-0 opacity-0 transition-all duration-300 pointer-events-none">
+    <svg id="toast-icon-success" class="w-6 h-6 text-green-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+    </svg>
+    <svg id="toast-icon-error" class="hidden w-6 h-6 text-red-500 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+    </svg>
+    <div>
+        <p id="toast-title" class="text-white font-semibold">Form Submitted!</p>
+        <p id="toast-message" class="text-slate-400 text-sm">We'll get back to you soon.</p>
+    </div>
+</div>
 {% endblock %}
