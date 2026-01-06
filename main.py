@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, redirect, jsonify
+from flask import Flask, render_template, request, redirect, jsonify , send_from_directory
 import sqlite3
 import sys
 import os
@@ -80,6 +80,18 @@ def init_db():
 
 # Initialize database
 init_db()
+
+
+# --- SEO Routes (NEW) ---
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), 'robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(os.path.dirname(os.path.abspath(__file__)), 'sitemap.xml')
+
+    
 
 @app.route('/')
 def index():

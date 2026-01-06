@@ -1,0 +1,12 @@
+# Last updated: 2026-01-06
+
+User-agent: *
+Disallow: /admin/
+Disallow: /login/
+Disallow: /register/
+Disallow: /checkout/
+Disallow: /cart/
+Disallow: /*?sort=
+Disallow: /*?filter=
+
+Sitemap: https://apexcorepay.com/sitemap.xml
