@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apex CorePay | High-Performance Merchant Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+     <!-- FAVICON (SVG Logo) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='92 60 328 320'><path d='M256 60 L420 224 L380 264 L256 140 L132 264 L92 224 Z' fill='%230B2A45'></path><path d='M256 180 L356 280 L256 380 L156 280 Z' fill='%231E73B9'></path></svg>">
+   
+   <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
+        .hero-gradient { background: radial-gradient(circle at top right, #1e3a8a, #0A192F, #0A192F); }
+        .text-gradient { background: linear-gradient(to r, #60a5fa, #2563eb); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card-hover:hover { transform: translateY(-10px); transition: all 0.3s ease; border-color: #3b82f6; }
+        .accordion-content { max-height: 0; overflow: hidden; transition: max-height 0.3s ease-out; }
+        .active .accordion-content { max-height: 200px; }
+        .active i { transform: rotate(180deg); }
+    </style>
+</head>
+<body class="bg-white text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-[#0A192F]/90 backdrop-blur-md border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <div class="p-1.5 rounded-lg shadow-lg shadow-primary/10 transition-transform group-hover:scale-105">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="92 60 328 320" class="h-12 w-auto">
+                        <path d="M256 60 L420 224 L380 264 L256 140 L132 264 L92 224 Z" fill="#0B2A45"></path>
+                        <path d="M256 180 L356 280 L256 380 L156 280 Z" fill="#1E73B9"></path>
+                    </svg>
+                </div>
+                <span class="text-white font-extrabold text-xl tracking-tight">ApexCore <span class="text-blue-500">Pay</span></span>
+            </div>
+            <div class="hidden md:flex gap-8 text-gray-300 font-medium">
+                <a href="#benefits" class="hover:text-blue-400 transition">Benefits</a>
+                <a href="#industries" class="hover:text-blue-400 transition">Industries</a>
+                <a href="#features" class="hover:text-blue-400 transition">Features</a>
+                <a href="#faq" class="hover:text-blue-400 transition">FAQ</a>
+            </div>
+        <a href="#apply" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full font-bold transition shadow-lg shadow-blue-500/20">Get Approved</a>
+     
+      </div>
+    </nav>
+
+ 
+
+    <!-- 1. HERO SECTION -->
+    <section class="hero-gradient relative pt-32 pb-20 px-6 min-h-screen flex items-center overflow-hidden">
+
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?auto=format&fit=crop&w=1600&q=80"
+                alt="Fintech Background"
+                class="w-full h-full object-cover opacity-20">
+        </div>
+
+        <!-- Dark Overlay -->
+        <div class="absolute inset-0 bg-[#0A192F]/80 z-0"></div>
+
+        <!-- Main Content -->
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+
+            <!-- LEFT COLUMN -->
+            <div class="text-left text-white">
+
+                <div class="inline-block bg-blue-500/10 border border-blue-500/30 text-blue-400 px-4 py-1 rounded-full text-sm font-bold mb-6">
+                    Next-Gen Merchant Infrastructure
+                </div>
+
+                <h1 class="text-5xl md:text-6xl xl:text-7xl font-extrabold leading-[1.1] mb-8">
+                    High-Performance <br>
+                    <span class="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+                        Payments
+                    </span>
+                    for <br>
+                    High-Growth Brands.
+                </h1>
+
+                <!-- Services Grid -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-10 text-gray-300">
+
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-500"></i>
+                        Merchant Services
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-500"></i>
+                        High Risk Merchant Accounts
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-500"></i>
+                        Low Risk Merchant Accounts
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-500"></i>
+                        Chargeback Mitigation Tools
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-500"></i>
+                        Chargeback Defence
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-500"></i>
+                        Alerts & RDR Integration
+                    </div>
+
+                    <div class="flex items-center gap-3">
+                        <i class="fas fa-check-circle text-blue-500"></i>
+                        Chargeback Representment
+                    </div>
+
+                </div>
+
+                <!-- Card Logos -->
+                <div class="mt-8 flex flex-wrap items-center gap-10 opacity-60">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg"
+                        alt="Mastercard"
+                        class="h-8 w-auto grayscale brightness-200 hover:grayscale-0 transition duration-300">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/American_Express_logo_%282018%29.svg"
+                        alt="American Express"
+                        class="h-7 w-auto grayscale brightness-200 hover:grayscale-0 transition duration-300">
+
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/5/57/Discover_Card_logo.svg"
+                        alt="Discover"
+                        class="h-6 w-auto grayscale brightness-200 hover:grayscale-0 transition duration-300">
+
+                </div>
+
+            </div>
+
+            <!-- RIGHT COLUMN (FORM) -->
+            <div id="apply" class="relative">
+
+                <!-- Glow Effect -->
+                <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-3xl blur opacity-30 animate-pulse"></div>
+
+                <div class="relative bg-white p-8 md:p-10 rounded-3xl shadow-2xl">
+
+                    <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-2xl font-bold text-slate-900">
+                        Get Approved
+                    </h3>
+
+                    <div id="liveStatus" 
+                        class="text-xs font-semibold px-3 py-1 rounded-full bg-green-100 text-green-700">
+                        Loading...
+                    </div>
+                </div>
+
+                    <form id="leadForm" action="/submit" method="POST" class="space-y-6">
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="text" placeholder="Full Name" name="firstName"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:border-blue-500 outline-none transition">
+
+                            <input type="email" placeholder="Business Email"  name="email"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:border-blue-500 outline-none transition">
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <input type="tel" placeholder="Mobile Number" name="phone"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:border-blue-500 outline-none transition">
+
+                            <input type="text" placeholder="Country" name="country"
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:border-blue-500 outline-none transition">
+                        </div>
+
+                        <input type="text" placeholder="Business Name" name="company"
+                            class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:border-blue-500 outline-none transition">
+
+                        <select name="monthly_volume" class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-gray-500 focus:border-blue-500 outline-none transition">
+                            <option value="">Monthly Volume (est. $)</option>
+                            <option>$0 - $50k</option>
+                            <option>$50k - $250k</option>
+                            <option>$250k+</option>
+                        </select>
+
+                        <textarea  name="message" rows="4"
+                                placeholder="Tell us about your business..."
+                                class="w-full bg-slate-50 border border-slate-200 rounded-xl px-4 py-3 text-slate-900 focus:border-blue-500 outline-none transition resize-none"></textarea>
+
+                        <input type="hidden" name="source" value="landing-organic">
+
+                        <button class="w-full bg-green-500 hover:bg-green-600 text-white py-4 rounded-xl font-extrabold text-lg shadow-lg shadow-green-500/20 transition-all transform hover:scale-[1.01]">
+                            Get Approved Now
+                        </button>
+
+                        <p class="text-center text-[11px] text-gray-400 uppercase tracking-widest font-bold">
+                            <i class="fas fa-shield-alt mr-1"></i> SSL Encrypted & Secure Data
+                        </p>
+
+                    </form>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+   
+
+    <!-- 2. Benefits Section -->
+    <section id="benefits" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl font-extrabold text-slate-900 mb-4">Why Industry Leaders Choose ApexCore Pay</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">We bridge the gap between traditional banking and the modern digital economy with specialized high-risk infrastructure.</p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-bolt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">AI-Driven Underwriting</h3>
+                    <p class="text-gray-600 leading-relaxed">Our proprietary risk-engine reviews your application in real-time, cutting the traditional 2-week wait down to 24 hours.</p>
+                </div>
+                <!-- Benefit 2 -->
+                <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 card-hover">
+                    <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shield-alt text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Zero-Cap Processing</h3>
+                    <p class="text-gray-600 leading-relaxed">Scale without fear. We provide dedicated MIDs with no monthly volume limits for verified high-growth businesses.</p>
+                </div>
+                <!-- Benefit 3 -->
+                 <div class="bg-white p-10 rounded-3xl shadow-sm border border-gray-100 card-hover border-blue-500/20">
+                    <div class="w-14 h-14 bg-green-100 text-green-600 rounded-2xl flex items-center justify-center mb-6">
+                        <i class="fas fa-check-double text-2xl"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">99% Approval Rate</h3>
+                    <p class="text-gray-600 leading-relaxed">Accept 50+ currencies with a processing network built specifically for high-risk and specialized industries.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   <!-- 3. How It Works (Updated Step 2) -->
+    <!-- 3. Process Section (Premium Icon Version with Connecting Line) -->
+<section class="py-24 px-6 bg-white border-b border-gray-50 relative">
+    <div class="max-w-7xl mx-auto text-center mb-16">
+        <h2 class="text-4xl font-extrabold text-slate-900 mb-4">
+            A Structured Path to Secure Processing
+        </h2>
+        <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+            A strategic onboarding framework designed for long-term approval stability and scalable growth.
+        </p>
+    </div>
+
+    <div class="max-w-6xl mx-auto relative">
+
+        <!-- Connecting Line -->
+        <div class="hidden md:block absolute top-10 left-0 right-0 h-0.5 bg-gray-200 z-0"></div>
+
+        <div class="grid md:grid-cols-4 gap-12 relative z-10">
+
+            <!-- Consultation -->
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white border border-gray-200 
+                            flex items-center justify-center shadow-sm 
+                            group-hover:shadow-lg transition">
+                    <i class="fas fa-handshake text-3xl text-blue-600"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3">Consultation</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Engage in a private one-on-one strategy session with experienced payment specialists.
+                </p>
+            </div>
+
+            <!-- Application -->
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white border border-gray-200 
+                            flex items-center justify-center shadow-sm 
+                            group-hover:shadow-lg transition">
+                    <i class="fas fa-file-signature text-3xl text-blue-600"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3">Application</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Submit comprehensive documentation to position your business for optimal approval terms.
+                </p>
+            </div>
+
+            <!-- Underwriting -->
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white border border-gray-200 
+                            flex items-center justify-center shadow-sm 
+                            group-hover:shadow-lg transition">
+                    <i class="fas fa-shield-alt text-3xl text-blue-600"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3">Underwriting</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Detailed financial analysis and risk structuring performed by specialized underwriting experts.
+                </p>
+            </div>
+
+            <!-- Activation -->
+            <div class="text-center group">
+                <div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-white border border-gray-200 
+                            flex items-center justify-center shadow-sm 
+                            group-hover:shadow-lg transition">
+                    <i class="fas fa-rocket text-3xl text-blue-600"></i>
+                </div>
+                <h4 class="font-bold text-xl mb-3">Activation</h4>
+                <p class="text-gray-600 text-sm leading-relaxed">
+                    Go live within 48 hours supported by dedicated onboarding and integration guidance.
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+    <!-- 4. Industries Section -->
+    <section id="industries" class="py-24 px-6 bg-[#0A192F] text-white overflow-hidden relative">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-4">Industries We Empower</h2>
+                    <p class="text-gray-400">If your business is complex, you're in the right place.</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="px-4 py-2 border border-white/10 rounded-lg text-sm bg-white/5">Low Risk</span>
+                    <span class="px-4 py-2 border border-blue-500/50 rounded-lg text-sm bg-blue-500/10">High Risk Specialized</span>
+                </div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass p-6 rounded-2xl text-center hover:bg-blue-600/20 transition cursor-default">
+                    <i class="fas fa-shopping-cart text-blue-500 text-3xl mb-4"></i>
+                    <p class="font-bold">E-Commerce</p>
+                </div>
+                <div class="glass p-6 rounded-2xl text-center hover:bg-blue-600/20 transition cursor-default border-blue-500/30">
+                    <i class="fas fa-pills text-blue-500 text-3xl mb-4"></i>
+                    <p class="font-bold">Nutraceuticals</p>
+                </div>
+                <div class="glass p-6 rounded-2xl text-center hover:bg-blue-600/20 transition cursor-default border-blue-500/30">
+                    <i class="fas fa-gamepad text-blue-500 text-3xl mb-4"></i>
+                    <p class="font-bold">Gaming & iGaming</p>
+                </div>
+                <div class="glass p-6 rounded-2xl text-center hover:bg-blue-600/20 transition cursor-default">
+                    <i class="fas fa-laptop-code text-blue-500 text-3xl mb-4"></i>
+                    <p class="font-bold">SaaS & Tech</p>
+                </div>
+                <div class="glass p-6 rounded-2xl text-center hover:bg-blue-600/20 transition cursor-default border-blue-500/30">
+                    <i class="fas fa-chart-line text-blue-500 text-3xl mb-4"></i>
+                    <p class="font-bold">Forex & Crypto</p>
+                </div>
+                <div class="glass p-6 rounded-2xl text-center hover:bg-blue-600/20 transition cursor-default border-blue-500/30">
+                    <i class="fas fa-headset text-blue-500 text-3xl mb-4"></i>
+                    <p class="font-bold">Tech Support</p>
+                </div>
+                <div class="glass p-6 rounded-2xl text-center hover:bg-blue-600/20 transition cursor-default border-blue-500/30">
+                    <i class="fas fa-plane text-blue-500 text-3xl mb-4"></i>
+                    <p class="font-bold">Travel & Events</p>
+                </div>
+                <div class="glass p-6 rounded-2xl text-center hover:bg-blue-600/20 transition cursor-default">
+                    <i class="fas fa-university text-blue-500 text-3xl mb-4"></i>
+                    <p class="font-bold">Legal & Finance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Features Section -->
+    <section id="features" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-16">
+            <div class="lg:w-1/2">
+               <img src="https://images.unsplash.com/photo-1556745757-8d76bdb6984b?q=80&w=1470&auto=format&fit=crop"
+     alt="Online Payment Processing"
+     class="rounded-3xl shadow-2xl w-full object-cover">
+      </div>
+            <div class="lg:w-1/2">
+                <h2 class="text-4xl font-extrabold mb-8">Advanced Technology for Resilient Revenue</h2>
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="mt-1 text-blue-600"><i class="fas fa-check-circle text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl">Chargeback Shield</h4>
+                            <p class="text-gray-600">Automated dispute resolution and real-time fraud monitoring to protect your merchant health.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 text-blue-600"><i class="fas fa-check-circle text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl">Smart Transaction Routing</h4>
+                            <p class="text-gray-600">Automatically route payments through acquiring banks most likely to approve them, boosting conversions by 15%.</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="mt-1 text-blue-600"><i class="fas fa-check-circle text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-xl">Multi-Currency Payouts</h4>
+                            <p class="text-gray-600">Collect in USD, EUR, GBP, or BTC. Settle in your choice of currency without hidden fees.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Testimonials Section -->
+    <section class="py-24 px-6 bg-slate-50">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-extrabold text-slate-900">Trusted by Global Founders</h2>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 italic text-gray-600">
+                <p class="mb-6">"Apex CorePay saved our Shopify store after our previous processor froze $50k without warning. We were back up and running in 18 hours."</p>
+                <div class="flex items-center gap-4 font-bold text-slate-900 not-italic">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 italic">M</div>
+                    <div>Marcus T. <span class="block font-normal text-sm text-gray-500">CEO, VitalNutra</span></div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 italic text-gray-600">
+                <p class="mb-6">"The uncapped volume feature is a game changer for high-ticket coaching. We scaled from $20k to $250k/mo with zero interruptions."</p>
+                <div class="flex items-center gap-4 font-bold text-slate-900 not-italic">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 italic">S</div>
+                    <div>Sarah J. <span class="block font-normal text-sm text-gray-500">Founder, Apex Academy</span></div>
+                </div>
+            </div>
+            <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 italic text-gray-600">
+                <p class="mb-6">"Their API is the most intuitive we've used in the fintech space. Integration took hours, not days. Absolutely recommended."</p>
+                <div class="flex items-center gap-4 font-bold text-slate-900 not-italic">
+                    <div class="w-10 h-10 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 italic">D</div>
+                    <div>David R. <span class="block font-normal text-sm text-gray-500">CTO, Nexus Gaming</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Application / CTA Form Section -->
+    <section id="apply" class="py-24 px-6 bg-white">
+        <div class="max-w-5xl mx-auto bg-[#0A192F] rounded-[3rem] p-8 md:p-16 text-white overflow-hidden relative">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-blue-600/20 blur-[100px]"></div>
+            <div class="relative z-10 grid md:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-4xl font-extrabold mb-6 leading-tight">Secure Your High-Volume MID Today</h2>
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check text-blue-500"></i> No Upfront Setup Fees</li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check text-blue-500"></i> 24/7 Dedicated Account Manager</li>
+                        <li class="flex items-center gap-3 text-gray-300"><i class="fas fa-check text-blue-500"></i> Next-Day Funding Available</li>
+                    </ul>
+                    <div class="p-6 bg-white/5 rounded-2xl border border-white/10">
+                        <p class="text-sm text-gray-400 italic">"Apex CorePay provides the infrastructure that banks usually ignore."</p>
+                    </div>
+                </div>
+                <div>
+                    <form class="space-y-4">
+                        <input type="text" placeholder="Full Name" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition">
+                        <input type="email" placeholder="Business Email" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition">
+                        <input type="text" placeholder="Monthly Volume (est. $)" class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition">
+                        <select class="w-full bg-white/10 border border-white/20 rounded-xl px-4 py-3 text-gray-400 focus:outline-none focus:border-blue-500 transition">
+                            <option>Industry Type</option>
+                            <option>E-commerce</option>
+                            <option>High Risk (CBD/Gaming/etc)</option>
+                            <option>SaaS / Tech</option>
+                        </select>
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 py-4 rounded-xl font-bold text-lg shadow-xl shadow-blue-500/20 transition">Submit Pre-Application</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. FAQ Section -->
+    <section id="faq" class="py-24 px-6 bg-slate-50">
+        <div class="max-w-3xl mx-auto">
+            <h2 class="text-4xl font-extrabold text-slate-900 text-center mb-12">Frequently Asked Questions</h2>
+            <div class="space-y-4">
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 cursor-pointer accordion-item shadow-sm">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg text-slate-900">What industries do you specialize in?</h4>
+                        <i class="fas fa-chevron-down text-gray-400 transition"></i>
+                    </div>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        We specialize in high-risk verticals including Nutraceuticals, CBD, iGaming, Adult VOD, Forex, and Crypto, alongside traditional e-commerce and retail brands.
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 cursor-pointer accordion-item shadow-sm">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg text-slate-900">How fast is the approval process?</h4>
+                        <i class="fas fa-chevron-down text-gray-400 transition"></i>
+                    </div>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        Most pre-approvals are issued within 24 hours. Full integration and live processing typically take 3-5 business days depending on documentation speed.
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 cursor-pointer accordion-item shadow-sm">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg text-slate-900">What are your processing fees?</h4>
+                        <i class="fas fa-chevron-down text-gray-400 transition"></i>
+                    </div>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        Our rates are custom-tailored based on volume and risk profile. We offer Interchange+ pricing models and guarantee to beat any valid competing offer by at least 10%.
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl p-6 border border-gray-100 cursor-pointer accordion-item shadow-sm">
+                    <div class="flex justify-between items-center">
+                        <h4 class="font-bold text-lg text-slate-900">Do you offer 3DS and chargeback protection?</h4>
+                        <i class="fas fa-chevron-down text-gray-400 transition"></i>
+                    </div>
+                    <div class="accordion-content mt-4 text-gray-600">
+                        Yes, our platform includes 3D Secure 2.0 and automated chargeback alerts (Verifi/Ethoca) integrated directly into your dashboard to prevent losses.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Final Conversion Section -->
+    <section class="py-20 px-6 hero-gradient text-white text-center">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-4xl md:text-5xl font-extrabold mb-8">Stop Leaving Revenue on the Table.</h2>
+            <p class="text-xl text-gray-400 mb-10 leading-relaxed">Join 5,000+ merchants who have scaled their businesses to new heights with Apex CorePay’s bulletproof processing infrastructure.</p>
+            <a href="#apply" class="bg-white text-blue-900 px-12 py-5 rounded-full font-bold text-xl hover:bg-gray-100 transition shadow-2xl">Secure Your Account Now</a>
+            <p class="mt-8 text-sm text-gray-500">PCI-DSS Level 1 Certified • Secure Data Encryption</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white py-12 px-6 border-t border-gray-100">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-8">
+            <div class="flex items-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="92 60 328 320" class="h-12 w-auto">
+                    <path d="M256 60 L420 224 L380 264 L256 140 L132 264 L92 224 Z" fill="#0B2A45"></path>
+                    <path d="M256 180 L356 280 L256 380 L156 280 Z" fill="#1E73B9"></path>
+                </svg>
+                <span class="text-slate-900 font-extrabold text-lg">Apex CorePay</span>
+
+            </div>
+            <div class="text-gray-500 text-sm">
+                &copy; 2026 Apex CorePay. All rights reserved. Registered ISO of multiple acquiring banks worldwide.
+            </div>
+            <div class="flex gap-6 text-gray-400 text-xl">
+                <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="hover:text-blue-600 transition"><i class="fab fa-facebook"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="toast"
+        class="fixed top-6 right-6 bg-green-500 text-white px-6 py-4 rounded-xl shadow-xl 
+                opacity-0 pointer-events-none transform translate-y-4 transition-all duration-300 z-50">
+        Form submitted successfully!
+    </div>
+
+    <script>
+        // FAQ Accordion Logic
+        document.querySelectorAll('.accordion-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const isActive = item.classList.contains('active');
+                
+                // Close all other items
+                document.querySelectorAll('.accordion-item').forEach(otherItem => {
+                    otherItem.classList.remove('active');
+                });
+
+                // Toggle current item
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+
+
+        // Live Agent Status Randomizer
+        function generateLiveStatus() {
+            const agents = Math.floor(Math.random() * 8) + 1; // 1-8
+            const wait = Math.floor(Math.random() * 4) + 1;   // 1-4
+
+            const statusEl = document.getElementById("liveStatus");
+
+            if (statusEl) {
+                statusEl.innerHTML = `
+                    <i class="fas fa-circle mr-1 text-green-500 animate-pulse"></i>
+                    Agents Online: ${agents} | Wait: ${wait} min
+                `;
+            }
+        }
+
+        // Run on page load
+        generateLiveStatus();
+
+
+
+        // AJAX Form Submit
+        document.getElementById("leadForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            const form = e.target;
+            const formData = new FormData(form);
+
+            fetch("/submit", {
+                method: "POST",
+                body: formData
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    showToast(data.message);
+                    form.reset();
+                } else {
+                    showToast("Submission failed. Please try again.", true);
+                }
+            })
+            .catch(() => {
+                showToast("Server error. Please try again.", true);
+            });
+        });
+
+        // Toast Function
+        function showToast(message, isError = false) {
+            const toast = document.getElementById("toast");
+
+            toast.textContent = message;
+
+            if (isError) {
+                toast.classList.remove("bg-green-500");
+                toast.classList.add("bg-red-500");
+            } else {
+                toast.classList.remove("bg-red-500");
+                toast.classList.add("bg-green-500");
+            }
+
+            toast.classList.remove("opacity-0", "pointer-events-none", "translate-y-4");
+
+            setTimeout(() => {
+                toast.classList.add("opacity-0", "pointer-events-none", "translate-y-4");
+            }, 3000);
+        }
+
+
+
+
+    </script>
+</body>
+</html>

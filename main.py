@@ -28,15 +28,24 @@ def init_db():
             # Table doesn't exist, create it
             conn.execute('''
                 CREATE TABLE users (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    first_name TEXT NOT NULL,
-                    last_name TEXT NOT NULL,
-                    email TEXT NOT NULL,
-                    company TEXT,
-                    phone TEXT NOT NULL,
-                    message TEXT NOT NULL,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                )
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+
+                first_name TEXT,
+                last_name TEXT,
+
+                email TEXT NOT NULL,
+                company TEXT,
+                phone TEXT,
+
+                country TEXT,
+                monthly_volume TEXT,
+
+                message TEXT,
+
+                source TEXT DEFAULT 'contact-page',
+
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
             ''')
         elif 'name' in columns and 'first_name' not in columns:
             # Old schema exists, migrate it
@@ -157,13 +166,20 @@ def submit():
         # Get all form fields
         first_name = request.form.get('firstName', '')
         last_name = request.form.get('lastName', '')
+
         email = request.form.get('email', '')
         company = request.form.get('company', '')
         phone = request.form.get('phone', '')
+
+        country = request.form.get('country', '')
+        monthly_volume = request.form.get('monthly_volume', '')
+
         message = request.form.get('message', '')
 
+        source = request.form.get('source', 'contact-page')
+
         # Validate required fields
-        if not first_name or not last_name or not email or not phone or not message:
+        if not email:
             return jsonify({'success': False, 'message': 'Please fill in all required fields.'}), 400
 
         # Print all form information
@@ -181,8 +197,10 @@ def submit():
         # Store all fields in database
         conn = get_db_connection()
         conn.execute(
-            'INSERT INTO users (first_name, last_name, email, company, phone, message) VALUES (?, ?, ?, ?, ?, ?)',
-            (first_name, last_name, email, company, phone, message)
+            '''INSERT INTO users 
+            (first_name, last_name, email, company, phone, country, monthly_volume, message, source) 
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+            (first_name, last_name, email, company, phone, country, monthly_volume, message, source)
         )
         conn.commit()
         conn.close()
@@ -210,6 +228,18 @@ def chatbot():
     except Exception as e:
         print(f"Error in chatbot endpoint: {str(e)}")
         return jsonify({'response': 'I\'m sorry, I\'m having trouble processing your request right now. Please try again later.'}), 500
+
+
+@app.route('/landing')
+def landing():
+    print("landing page  ")
+    return render_template('features/landing.html')
+
+
+
+
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
