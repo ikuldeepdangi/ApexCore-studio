@@ -3,6 +3,8 @@ import sqlite3
 import sys
 import os
 
+import mysql.connector
+from mysql.connector import Error
 
 # Add backend directory to path
 sys.path.append(os.path.join(os.path.dirname(__file__), 'backend'))
@@ -12,82 +14,64 @@ from mail import send_mail # Works
 
 app = Flask(__name__)
 
-# Database setup
-def get_db_connection():
-    conn = sqlite3.connect('database.db')
-    conn.row_factory = sqlite3.Row
-    return conn
 
-# Create table with proper schema
+
+# New MySQL Database connection
+def get_db_connection():
+    try:
+        conn = mysql.connector.connect(
+            host=os.getenv("DB_HOST"),
+            user=os.getenv("DB_USER"),
+            password=os.getenv("DB_PASS"),
+            database=os.getenv("DB_NAME")
+        )
+        return conn
+    except Error as e:
+        print(f"Error connecting to MySQL: {e}")
+        return None
+
+# Updated init_db for MySQL syntax
 def init_db():
     conn = get_db_connection()
+    if not conn: return
+    
+    cursor = conn.cursor()
     try:
-        # Check if table exists and has old schema
-        cursor = conn.execute("PRAGMA table_info(users)")
-        columns = [row[1] for row in cursor.fetchall()]
-        
-        if not columns:
-            # Table doesn't exist, create it
-            conn.execute('''
-                CREATE TABLE users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-
-                first_name TEXT,
-                last_name TEXT,
-
-                email TEXT NOT NULL,
-                company TEXT,
-                phone TEXT,
-
-                country TEXT,
-                monthly_volume TEXT,
-
+        # Create users table
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS users (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                first_name VARCHAR(255),
+                last_name VARCHAR(255),
+                email VARCHAR(255) NOT NULL,
+                company VARCHAR(255),
+                phone VARCHAR(50),
+                country VARCHAR(100),
+                monthly_volume VARCHAR(100),
                 message TEXT,
-
-                source TEXT DEFAULT 'contact-page',
-
-                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-            )
-            ''')
-        elif 'name' in columns and 'first_name' not in columns:
-            # Old schema exists, migrate it
-            conn.execute('''
-                CREATE TABLE users_new (
-                    id INTEGER PRIMARY KEY AUTOINCREMENT,
-                    first_name TEXT NOT NULL,
-                    last_name TEXT NOT NULL,
-                    email TEXT NOT NULL,
-                    company TEXT,
-                    phone TEXT NOT NULL,
-                    message TEXT NOT NULL,
-                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-                )
-            ''')
-            # Copy existing data if any
-            conn.execute('''
-                INSERT INTO users_new (first_name, last_name, email, company, phone, message)
-                SELECT COALESCE(name, ''), '', COALESCE(email, ''), '', '', ''
-                FROM users
-            ''')
-            conn.execute('DROP TABLE users')
-            conn.execute('ALTER TABLE users_new RENAME TO users')
-    except sqlite3.OperationalError:
-        # Table doesn't exist, create it
-        conn.execute('''
-            CREATE TABLE users (
-                id INTEGER PRIMARY KEY AUTOINCREMENT,
-                first_name TEXT NOT NULL,
-                last_name TEXT NOT NULL,
-                email TEXT NOT NULL,
-                company TEXT,
-                phone TEXT NOT NULL,
-                message TEXT NOT NULL,
+                source VARCHAR(100) DEFAULT 'contact-page',
                 created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
             )
         ''')
-    
-    conn.commit()
-    conn.close()
+
+        # Create partner_leads table
+        cursor.execute('''
+            CREATE TABLE IF NOT EXISTS partner_leads (
+                id INT AUTO_INCREMENT PRIMARY KEY,
+                legal_name VARCHAR(255) NOT NULL,
+                dba VARCHAR(255),
+                cell_number VARCHAR(50) NOT NULL,
+                email VARCHAR(255) NOT NULL,
+                description TEXT,
+                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+            )
+        ''')
+        conn.commit()
+    except Error as e:
+        print(f"Error: {e}")
+    finally:
+        cursor.close()
+        conn.close()
 
 # Initialize database
 init_db()
@@ -189,15 +173,15 @@ def submit():
         
 
         # Store all fields in database
-        conn = get_db_connection()
-        conn.execute(
+        cursor = conn.cursor()
+        cursor.execute(
             '''INSERT INTO users 
             (first_name, last_name, email, company, phone, country, monthly_volume, message, source) 
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)''',
+            VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s)''', 
             (first_name, last_name, email, company, phone, country, monthly_volume, message, source)
         )
         conn.commit()
-        conn.close()
+        cursor.close()
 
         # Premium Email Notification
         subject = f"ApexCore Pay - New Lead: {first_name} {last_name}"
@@ -270,14 +254,15 @@ def submit_partner():
         if not email or not legal_name:
             return jsonify({'success': False, 'message': 'Required fields are missing.'}), 400
 
-        conn = get_db_connection()
-        conn.execute(
+        # Change the execute line to this:
+        cursor = conn.cursor()
+        cursor.execute(
             '''INSERT INTO partner_leads (legal_name, dba, cell_number, email, description) 
-               VALUES (?, ?, ?, ?, ?)''',
+            VALUES (%s, %s, %s, %s, %s)''',
             (legal_name, dba, cell, email, description)
         )
         conn.commit()
-        conn.close()
+        cursor.close()
 
 
         # Premium Partner Notification
@@ -342,4 +327,4 @@ def landing():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5001)
+    app.run(debug=True)
