@@ -22,9 +22,26 @@
     j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-WJX3DWTV');</script>
-    <title>{% block title %}ApexCore Pay | High-Performance Payment Infrastructure{% endblock %}</title>
     
-    <meta name="description" content="Get approved for a high-risk merchant account for business like Call center, Travel, Nutra, CBD, Peptides within 24-48 hours with zero cap and zero reserve.">
+
+    <title>{% block title %}High-Risk Merchant Accounts | ApexCore Pay{% endblock %}</title>
+    <meta name="description" content="Get approved for high-risk merchant accounts for CBD, Nutra, Travel, Forex and Call Centers within 24-48 hours. Zero reserve. No processing caps.">
+    <link rel="canonical" href="https://apexcorepay.com/">
+
+    <!-- og -->
+    <meta property="og:title" content="ApexCore Pay | High Risk Merchant Accounts">
+    <meta property="og:description" content="High-risk merchant account approvals within 24-48 hours for CBD, Nutra, Forex and Call Centers.">
+    <meta property="og:image" content="https://apexcorepay.com/static/images/icon.png">
+    <meta property="og:url" content="https://apexcorepay.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="ApexCore Pay">
+    
+    <!-- twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="ApexCore Pay | High Risk Merchant Accounts">
+    <meta name="twitter:description" content="High-risk merchant account approvals within 24-48 hours for CBD, Nutra, Forex and Call Centers.">
+    <meta name="twitter:image" content="https://apexcorepay.com/static/images/icon.png">
+
 
     <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/icon.png') }}">
 
@@ -150,6 +167,29 @@
 
         html { scroll-behavior: smooth; }
     </style>
+
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "ApexCore Pay",
+    "url": "https://apexcorepay.com",
+    "logo": "https://apexcorepay.com/static/images/icon.png"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ApexCore Pay",
+    "url": "https://apexcorepay.com/",
+    "potentialAction": {
+    "@type": "SearchAction",
+    "target": "https://apexcorepay.com/?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+    }
+    }
+    </script>
 
     {% block extra_head %}{% endblock %}
 </head>
