@@ -94,6 +94,10 @@ def sitemap():
 def index():
     return render_template('base/index.html')
 
+@app.route('/about')
+def about_us():
+    return render_template('base/about_us.html')
+
 @app.route('/solutions/high-risk-accounts')
 def high_risk_accounts():
     return render_template('solutions/high-risk-accounts.html')
