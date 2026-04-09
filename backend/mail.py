@@ -40,11 +40,8 @@ def send_mail(subject, body):
             print(f"DEBUG: Connecting to {SMTP_SERVER} via TLS (Port {port})...")
             server = smtplib.SMTP(SMTP_SERVER, port)
             server.starttls()
-            print("DEBUG: TLS Started.")
 
-        print("DEBUG: Attempting login...")
         server.login(SMTP_USER, SMTP_PASS)
-        print("DEBUG: Login successful.")
 
         server.send_message(msg)
         print("DEBUG: Message sent.")
