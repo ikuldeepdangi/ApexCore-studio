@@ -176,29 +176,31 @@
 document.getElementById('contact-form').addEventListener('submit', function(e) {
     const websiteInput = document.getElementById('company');
     const websiteError = document.getElementById('website-error');
-    const websiteValue = websiteInput.value.trim();
-    
-    // Regex to check for a dot and at least 2 characters after it (domain extension)
-    // Matches "test.com", "https://test.com", "www.test.co.uk", etc.
-    const domainRegex = /^([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}$/;
-    
-    // If field is not empty, validate it
-    if (websiteValue !== "") {
-        if (!domainRegex.test(websiteValue)) {
-            e.preventDefault(); // Stop form submission
+
+    let value = websiteInput.value.trim();
+
+    // Remove protocol if user enters it
+    value = value.replace(/^(https?:\/\/)?(www\.)?/, '');
+
+    // Improved domain regex
+    const domainRegex = /^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$/;
+
+    if (value !== "") {
+        if (!domainRegex.test(value)) {
+            e.preventDefault();
+
             websiteInput.classList.add('border-red-500');
             websiteError.classList.remove('hidden');
-            
-            // Optional: Scroll to the error
-            websiteInput.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return false;
+
+            return;
         }
     }
-    
-    // Reset error if valid
+
+    // Reset error
     websiteInput.classList.remove('border-red-500');
     websiteError.classList.add('hidden');
 });
+
 </script>
 
 {% endblock %}

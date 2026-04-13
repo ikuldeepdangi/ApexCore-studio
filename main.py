@@ -3,6 +3,7 @@ import sqlite3
 import sys
 import os
 from flask_cors import CORS  # Add this import
+import re
 
 import mysql.connector
 from mysql.connector import Error
@@ -163,6 +164,15 @@ def submit():
         monthly_volume = request.form.get('monthly_volume', '')
         message = request.form.get('message', '')
         source = request.form.get('source', 'contact-page')
+
+     
+
+        domain_pattern = r'^[a-zA-Z0-9-]+\.[a-zA-Z]{2,}(\.[a-zA-Z]{2,})?$'
+
+        if company:
+            company_clean = re.sub(r'^(https?:\/\/)?(www\.)?', '', company)
+            if not re.match(domain_pattern, company_clean):
+                return jsonify({'success': False, 'message': 'Invalid website domain'}), 400
 
         if not email:
             return jsonify({'success': False, 'message': 'Please fill in all required fields.'}), 400
